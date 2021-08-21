@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: parabolcbuildanddeploytoaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parabolcbuildanddeploytoaks
+  template:
+    metadata:
+      labels:
+        app: parabolcbuildanddeploytoaks 
+    spec:
+      containers:
+        - name: parabolcbuildanddeploytoaks 
+          image: 001acr.azurecr.io/parabolcbuildanddeploytoaks
+          ports:
+          - containerPort: 8080
